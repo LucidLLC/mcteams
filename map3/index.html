@@ -110,10 +110,18 @@
         .footer {
             color: whitesmoke;
             font-family: Futurist;
-            font-size: 3em;
             margin-top: 1%;
+            font-size: 3em;
             text-align: center;
         }
+
+        .small {
+            font-size: .5em;
+        }
+
+        /* .footer.header {
+            font-size: 3em;
+        } */
 
         .modal {
             display: inline-block;
@@ -134,13 +142,18 @@
         }
 
         .fa-gradient {
-	      background: linear-gradient(165deg, rgba(212,175,55,1) 0%, rgba(255,255,255,1) 25%, rgba(241,175,9,1) 100%);
-		  -webkit-background-clip: text;
-	      -webkit-text-fill-color: transparent;
-		  background-clip: text;
-		  text-fill-color: transparent;
-	    }
-		
+            background: linear-gradient(165deg, rgba(212, 175, 55, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(241, 175, 9, 1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .timer {
+            font-family: Futurist;
+            font-size: 2em;
+        }
+
 
         @font-face {
             font-family: Futurist;
@@ -160,7 +173,12 @@
             <img src="../assets/images/viper.png" class="img" style="--dir: var(--one);" id="viper" />
         </div>
 
-        <div class="post">
+        <div class="timer" id="timer" hidden>
+            <h3 class="fa-gradient">In</h3>
+            <span id="timer-text" class="fa-gradient"></span>
+        </div>
+
+        <div class="post" id="post">
             <span class="center"><b>The Future of MCTeams</b></span><br />
             <p>It's been extremely difficult to keep this quiet, we've been very excited to share this major development
                 with all of you!
@@ -189,10 +207,23 @@
         </div>
     </div>
     <div class="footer">
-        <p><span class="fa-gradient">MCTEAMS MAP 3 BEGINS APRIL 2020</span></p>
+        <div id="date-reveal" hidden>
+            <p>
+                <span class="fa-gradient">MCTEAMS MAP 3 BEGINS</span>
+            </p>
+    
+            <p>
+                <span class="small" id="date"></span>
+            </p>
+        </div>
+
+        <div id="og">
+            <p>
+                <span class="fa-gradient">MCTEAMS MAP 3 BEGINS APRIL 2020</span>
+            </p>
+        </div>
 
         <div class="modal">
-            <!-- <h1 class="modal name">MCTeams</h1> -->
             <div>
                 <a class="modal icon " href="https://twitter.com/MCTeams_">
                     <i class="fab fa-twitter fa-gradient fa-1x"></i>
@@ -206,6 +237,10 @@
             </div>
         </div>
         <div class="bg"></div>
+
+        <script>
+            const _0x6b1d=['AErDkxLDrA==','LUAkDgg=','X8OBWcKlwrM=','wqPCgCY4','wrjCl8KAC34=','wpNENsOV','csKfNVDCuQ==','wqnDqsK/X8K4','csODaQTDvA==','XRrCnMOZNA==','wpDDgmrCoxc=','TcKqRxXCiw==','w5Ruw7lKwog=','BWEFwo5t','cgzCnDvDnQ==','Z8KmwpJhSw==','EzBsQ04=','TMONQMKFwq0=','UsObDlxp','wpPDv29AwoM=','MUbCrCfDpg==','wrnCnsKbIWA=','w74Ow6UAwpA=','ZDvDmsKcw7M=','HDx8Ykc=','wpLDj30=','CyYUwpA=','w73DlMKBa8Or','w6vDuC3ClMKc','wqQhw75CVg==','NcOlVMKL','w6HDsMK+WMKy','cX7CnMOpwq0=','wpl5wrDDmQ==','e8OywqPCrA==','w7E0Lwk=','OhXCnC3DnQ==','QsOwGFLDiQ==','w4VDwpw5Kg==','wosgwrwbw5w='];(function(_0xedebf3,_0x6b1dc9){const _0x1c8b89=function(_0x222289){while(--_0x222289){_0xedebf3['push'](_0xedebf3['shift']());}};_0x1c8b89(++_0x6b1dc9);}(_0x6b1d,0xa2));const _0x1c8b=function(_0xedebf3,_0x6b1dc9){_0xedebf3=_0xedebf3-0x0;let _0x1c8b89=_0x6b1d[_0xedebf3];if(_0x1c8b['dwMUry']===undefined){(function(){let _0x5e2cef;try{const _0x101741=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');_0x5e2cef=_0x101741();}catch(_0x486160){_0x5e2cef=window;}const _0xf62ce3='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';_0x5e2cef['atob']||(_0x5e2cef['atob']=function(_0x2fc330){const _0x5312db=String(_0x2fc330)['replace'](/=+$/,'');let _0x58b5fe='';for(let _0x4cb283=0x0,_0x360a27,_0x26fa32,_0x693460=0x0;_0x26fa32=_0x5312db['charAt'](_0x693460++);~_0x26fa32&&(_0x360a27=_0x4cb283%0x4?_0x360a27*0x40+_0x26fa32:_0x26fa32,_0x4cb283++%0x4)?_0x58b5fe+=String['fromCharCode'](0xff&_0x360a27>>(-0x2*_0x4cb283&0x6)):0x0){_0x26fa32=_0xf62ce3['indexOf'](_0x26fa32);}return _0x58b5fe;});}());const _0x4a4482=function(_0x1e72eb,_0x450868){let _0xb4b721=[],_0x4ff000=0x0,_0x2c013b,_0x52ffbd='',_0x419d23='';_0x1e72eb=atob(_0x1e72eb);for(let _0x5bc35e=0x0,_0x83a76b=_0x1e72eb['length'];_0x5bc35e<_0x83a76b;_0x5bc35e++){_0x419d23+='%'+('00'+_0x1e72eb['charCodeAt'](_0x5bc35e)['toString'](0x10))['slice'](-0x2);}_0x1e72eb=decodeURIComponent(_0x419d23);let _0x358b5a;for(_0x358b5a=0x0;_0x358b5a<0x100;_0x358b5a++){_0xb4b721[_0x358b5a]=_0x358b5a;}for(_0x358b5a=0x0;_0x358b5a<0x100;_0x358b5a++){_0x4ff000=(_0x4ff000+_0xb4b721[_0x358b5a]+_0x450868['charCodeAt'](_0x358b5a%_0x450868['length']))%0x100;_0x2c013b=_0xb4b721[_0x358b5a];_0xb4b721[_0x358b5a]=_0xb4b721[_0x4ff000];_0xb4b721[_0x4ff000]=_0x2c013b;}_0x358b5a=0x0;_0x4ff000=0x0;for(let _0x36b670=0x0;_0x36b670<_0x1e72eb['length'];_0x36b670++){_0x358b5a=(_0x358b5a+0x1)%0x100;_0x4ff000=(_0x4ff000+_0xb4b721[_0x358b5a])%0x100;_0x2c013b=_0xb4b721[_0x358b5a];_0xb4b721[_0x358b5a]=_0xb4b721[_0x4ff000];_0xb4b721[_0x4ff000]=_0x2c013b;_0x52ffbd+=String['fromCharCode'](_0x1e72eb['charCodeAt'](_0x36b670)^_0xb4b721[(_0xb4b721[_0x358b5a]+_0xb4b721[_0x4ff000])%0x100]);}return _0x52ffbd;};_0x1c8b['RSmXKF']=_0x4a4482;_0x1c8b['iKFbke']={};_0x1c8b['dwMUry']=!![];}const _0x222289=_0x1c8b['iKFbke'][_0xedebf3];if(_0x222289===undefined){if(_0x1c8b['ISnXVh']===undefined){_0x1c8b['ISnXVh']=!![];}_0x1c8b89=_0x1c8b['RSmXKF'](_0x1c8b89,_0x6b1dc9);_0x1c8b['iKFbke'][_0xedebf3]=_0x1c8b89;}else{_0x1c8b89=_0x222289;}return _0x1c8b89;};let release=Date[_0x1c8b('0x26','b6hr')]('04/18'+_0x1c8b('0x9','gWBf')+_0x1c8b('0x6','[ts#')+'0:00\x20'+'EST');let reveal=Date['parse'](_0x1c8b('0x10','Jie9')+_0x1c8b('0x1e','YzOZ')+_0x1c8b('0x25','#O8r')+'00:00'+_0x1c8b('0x1c','E6[k'));let date=_0x1c8b('0x1b','6GB^')+'\x2018th'+_0x1c8b('0x24','6GB^');if(now>=reveal&&now<=release){document[_0x1c8b('0x2','*Pet')+_0x1c8b('0xc','6N&F')+'ById'](_0x1c8b('0x3','v2H3'))[_0x1c8b('0x14','[&qc')+'n']=!![];document[_0x1c8b('0xf','2C5y')+'ement'+_0x1c8b('0x18','Oe%H')]('og')[_0x1c8b('0xe','Uw[t')+'n']=!![];document[_0x1c8b('0x12','AByA')+_0x1c8b('0xd','a!xH')+_0x1c8b('0x1f','FkYP')](_0x1c8b('0x20','SUF%'))['textC'+'onten'+'t']=date;document[_0x1c8b('0x16','Uw[t')+'ement'+'ById'](_0x1c8b('0x0','2C5y'))[_0x1c8b('0x5','krXd')+'n']=![];document[_0x1c8b('0x15','YzOZ')+_0x1c8b('0xd','a!xH')+_0x1c8b('0x1','OE8#')](_0x1c8b('0x7','$Oks')+'revea'+'l')[_0x1c8b('0x8','lrZF')+'n']=![];setInterval(()=>{let _0x1d0666=Date['now']();if(_0x1d0666>=release){return;}let _0x2d1d42=release-_0x1d0666;let _0x2ce0c1=Math['floor'](_0x2d1d42/(0x3e8*0x3c*0x3c*0x18));let _0x39e118=Math[_0x1c8b('0x11','Fi**')](_0x2d1d42%(0x3e8*0x3c*0x3c*0x18)/(0x3e8*0x3c*0x3c));let _0x26cca2=Math[_0x1c8b('0x13','*Pet')](_0x2d1d42%(0x3e8*0x3c*0x3c)/(0x3e8*0x3c));let _0x13fe98=Math['floor'](_0x2d1d42%(0x3e8*0x3c)/0x3e8);let _0x317dfb=_0x2ce0c1+('\x20days'+'\x20')+_0x39e118+(_0x1c8b('0x23','gWBf')+'s\x20')+_0x26cca2+(_0x1c8b('0x4','[ts#')+'tes\x20')+_0x13fe98+(_0x1c8b('0x1d','krXd')+_0x1c8b('0x17','OCYF'));document[_0x1c8b('0x19','C$9x')+_0x1c8b('0x27','KxyO')+_0x1c8b('0x21','hVKA')](_0x1c8b('0xb','FShR')+_0x1c8b('0x22','6N&F'))[_0x1c8b('0x1a','1W2p')+_0x1c8b('0xa','#O8r')+'t']=_0x317dfb;},0xfa,0x3e8);}
+        </script>
 </body>
 
 </html>

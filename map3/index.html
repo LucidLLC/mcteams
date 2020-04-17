@@ -176,18 +176,19 @@
             <span class="x">×</span>
             <img src="../assets/images/viper.png" class="img" style="--dir: var(--one);" id="viper" />
         </div>
-    
-        
+
+
         <div class="timer" id="timer" hidden>
             <div>
-                <video width="700" height="350"  autoplay loop muted>
-                    <source  src="../assets/videos/map3.mp4" type="video/mp4">
-                </video>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/JD_9krnLXRc?autoplay=1&muted=1&loop=1" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
             <h3 class="fa-gradient">In</h3>
             <span id="timer-text" class="fa-gradient"></span>
-            
-      
+
+
         </div>
 
         <div class="post" id="post">
@@ -256,10 +257,10 @@
         let release = Date.parse('04/18/2020 15:00:00 EST');
         let reveal = Date.parse('11 Apr 2020 14:00:00 EST');
         let date = "APRIL 18th 2020";
-    
+
         let now = Date.now();
-        
-        if (now >= reveal && now <= release) {
+
+        if (now >= reveal) {
             document.getElementById('post').hidden = true; // hide the post if it's past the reveal date
             document.getElementById('og').hidden = true;
 
@@ -268,26 +269,30 @@
             document.getElementById('timer').hidden = false;
             document.getElementById('date-reveal').hidden = false;
 
-            setInterval(() => {
-                let now = Date.now();
+            if (now >= release) {
+                document.getElementById('timer').textContent = "NOW";
+            } else {
+                setInterval(() => {
+                    let now = Date.now();
 
-                if (now >= release) {
-                    return;
-                }
-
-
-                let distance = release - now;
-
-                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    if (now >= release) {
+                        return;
+                    }
 
 
-                let timerText = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+                    let distance = release - now;
 
-                document.getElementById('timer-text').textContent = timerText;
-            }, 250, 1000);
+                    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+                    let timerText = `${days} day${days == 1 ? "" : "s"} ${hours} hour${hours == 1 ? "" : "s"} ${minutes} minute${minutes == 1 ? "" : "s"} ${seconds} second${seconds == 1 ? "" : "s"}`;
+
+                    document.getElementById('timer-text').textContent = timerText;
+                }, 250, 1000);
+            }
         }
     </script>
 </body>

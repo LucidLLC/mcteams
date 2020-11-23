@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tracking Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <form name="form">
+        <div class="buttons">
+            <div class="row">
+                <label for="xcoord">X Coord:</label><br>
+                <input type="label" id="xcoord" name="xcoord" value="0"><br>
+                <label for="xdistance">X Distance:</label><br>
+                <input type="label" id="xdistance" name="xdistance" value="0"><br>
+                <label for="xnarrow">X Narrow:</label><br>
+                <input type="label" id="xnarrow" name="xnarrow" value="0"><br>
+                <label for="xdirection">X Direction:</label>
+                <select id="xdirection" name="Direction">
+                    <Option value="East">East</option>
+                    <Option value="West">West</option>
+                </select><br>
+            </div>
+
+            <div class="row">
+                <label for="zcoord">Z Coord:</label><br>
+                <input type="label" id="zcoord" name="zcoord" value="0"><br>
+                <label for="zdistance">Z Distance:</label><br>
+                <input type="label" id="zdistance" name="zdistance" value="0"><br>
+                <label for="znarrow">Z Narrow:</label><br>
+                <input type="label" id="znarrow" name="znarrow" value="0"><br>
+                <label for="zdirection">Z Direction:</label>
+                <select id="zdirection" name="Direction">
+                    <Option value="North">North</option>
+                    <Option value="South">South</option>
+                </select><br>
+            </div>
+            <div class="row">
+                <input style="margin:15px;" type="submit" value="Calculate" name="Calculate"
+                       onclick="calculate(); return false"/>
+            </div>
+
+            <div class="row">
+                <p id="answer"></p>
+                <script type="text/javascript" src="calc.js"></script>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- The titles font -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400&display=swap" rel="stylesheet">
+    <!-- Font awesome (For logos)  -->
+    <script src="https://kit.fontawesome.com/ab68e071ce.js"></script>
+    <link rel="icon" href="../assets/images/mcteams-logo-new.png" sizes="32x32" type="image/png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .x {
+            font-size: 8em;
+            color: whitesmoke;
+            animation: fade ease 3s;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0%;
+            }
+
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        .container {
+            width: 65%;
+            text-align: center;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        :root {
+            --negative-one: -1;
+            --one: 1;
+        }
+
+        @keyframes fadeInAndGrow {
+            from {
+
+                transform: scale(0.5);
+            }
+
+            to {
+                transform: scale(1);
+            }
+
+            0% {
+                transform: translateX(calc(50% * var(--dir)));
+                opacity: 0%;
+            }
+
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        .img {
+            border-color: black;
+            border-radius: 25%;
+            width: 15%;
+            filter: drop-shadow(0 0 0.25rem);
+            animation: fadeInAndGrow ease 1.5s;
+        }
+
+        .bg {
+            background: url("../assets/images/moon.png");
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -ms-background-size: cover;
+            -o-background-size: cover;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .post {
+            width: 80%;
+            padding: 20px;
+            margin: 0 auto;
+            margin-top: 1%;
+            background-color: whitesmoke;
+            color: black;
+            filter: drop-shadow(0 0 0.25rem);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .post p {
+            text-align: left;
+        }
+
+        .footer {
+            color: whitesmoke;
+            font-family: Futurist;
+            margin-top: 1%;
+            font-size: 2.25em;
+            text-align: center;
+        }
+
+        .small {
+            font-size: .5em;
+        }
+
+        /* .footer.header {
+            font-size: 3em;
+        } */
+
+        .modal {
+            display: inline-block;
+        }
+
+        .modal.name {
+            font-family: 'Work Sans', sans-serif;
+            color: black;
+        }
+
+        .modal.icon {
+            padding: 5px;
+            color: #d4af37;
+        }
+
+        .modal.icon:hover i {
+            filter: brightness(85%);
+        }
+
+        .fa-gradient {
+            background-color: #f5bb0c;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .fa-text {
+            background-color: #f5bb0c;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: Goldman;
+            /*font-weight: bold;*/
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .timer {
+            font-family: Futurist;
+            font-size: 2em;
+        }
+
+        .m3v {
+            padding: 5%;
+        }
+
+
+        @font-face {
+            font-family: Futurist;
+            src: url('../assets/fonts/futurist.ttf');
+        }
+    </style>
+    <title>MCTeams x Viper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="header">
+            <img src="../assets/images/mcteams-logo-new.png" id="mcteams" style="--dir: var(--negative-one);" class="img" />
+            <!--<span class="x">×</span>-->
+            <!--<img src="../assets/images/viper.png" class="img" style="&#45;&#45;dir: var(&#45;&#45;one);" id="viper" />-->
+        </div>
+
+
+        <div class="timer" id="timer" hidden>
+            <!--<div>-->
+                <!--<iframe width="560" height="315"-->
+                    <!--src="https://www.youtube.com/embed/JD_9krnLXRc?autoplay=1&muted=1&loop=1" frameborder="0"-->
+                    <!--allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+                    <!--allowfullscreen></iframe>-->
+            <!--</div>-->
+            <h3 class="fa-text">MAP 8 BEGINS IN</h3>
+            <!--<h3 class="fa-gradient">IN</h3>-->
+            <span id="timer-text" class="fa-text"></span>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div id="date-reveal" hidden>
+            <!--<p>-->
+                <!--<span class="fa-gradient">MCTEAMS MAP 3 BEGINS</span>-->
+            <!--</p>-->
+
+            <p>
+                <span class="small" id="date"></span>
+            </p>
+
+        </div>
+
+        <div id="og">
+            <p>
+                <span class="fa-text">MCTEAMS MAP 8 BEGINS APRIL 17TH 2021!</span>
+            </p>
+        </div>
+
+        <div class="modal">
+            <div>
+                <a class="modal icon " href="https://twitter.com/MCTeams_">
+                    <i class="fab fa-twitter fa-gradient fa-1x"></i>
+                </a>
+                <a class="modal icon" href="../discord">
+                    <i class="fab fa-discord fa-gradient fa-1x"></i>
+                </a>
+                <a class="modal icon" href="https://store.mcteams.com">
+                    <i class="fas fa-shopping-cart fa-gradient fa-1x"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="bg"></div>
+    <script>
+        let release = Date.parse('4/17/2021 15:00:00 EDT');
+        let reveal = Date.parse('2 April 2021 15:00:00 EDT');
+        let date = "APRIL 17th @ 3PM EST";
+
+        let now = Date.now();
+
+        if (now >= reveal) {
+            document.getElementById('og').hidden = true;
+
+            document.getElementById('date').textContent = date;
+
+            document.getElementById('timer').hidden = false;
+            document.getElementById('date-reveal').hidden = false;
+
+            if (now >= release) {
+                document.getElementById('timer').textContent = "NOW";
+            } else {
+                setInterval(() => {
+                    let now = Date.now();
+
+                    if (now >= release) {
+                        return;
+                    }
+
+
+                    let distance = release - now;
+
+                    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+                    let timerText = `${days} day${days == 1 ? "" : "s"} ${hours} hour${hours == 1 ? "" : "s"} ${minutes} minute${minutes == 1 ? "" : "s"} ${seconds} second${seconds == 1 ? "" : "s"}`;
+
+                    document.getElementById('timer-text').textContent = timerText;
+                }, 250, 1000);
+            }
+        }
+    </script>
+</body>
+
+</html>
